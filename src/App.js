@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  HashRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { Homepage } from './components/Homepage/Homepage';
+import { Planets } from './components/Planets';
+import { People } from './components/People/People';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <Switch>
+
+          <Route
+            exact path="/Home" >
+            <Homepage />
+          </Route>
+
+          <Route
+            exact
+            path="/Planets">
+            <Planets />
+          </Route>
+
+          <Route
+            exact path="/People">
+            <People />
+          </Route>
+
+        </Switch>
+      </>
+    </Router>
   );
 }
 
 export default App;
+
+// lmao look at this shit.s
+
